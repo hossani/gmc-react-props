@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import React from 'react';
+import MyProfile from './components/MyProfile.jsx'
 import './App.css';
 
-function App() {
+const App = () => {
+  const handleName = () => {
+    const fullName = 'John Doe';
+    alert(`Profile user's name is: ${fullName}`);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>My Profile</h1>
+      <MyProfile
+        fullName="John Smith"
+        bio="I'm a web developer"
+        profession="Software Enginer"
+        handleName={handleName}
+      >
+        <img src="profile-image.jpg" alt="Profile" />
+      </MyProfile>
     </div>
   );
-}
+};
 
 export default App;
